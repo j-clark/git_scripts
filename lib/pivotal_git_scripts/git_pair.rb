@@ -14,6 +14,11 @@ module PivotalGitScripts
       runner.commit(argv)
     end
 
+    def self.authors
+      runner = Runner.new
+      runner.authors
+    end
+
     class GitPairException < Exception; end
 
     class Runner
@@ -57,9 +62,6 @@ module PivotalGitScripts
           exit 0
         end
 
-        config = read_pairs_config
-        author_names, email_ids = extract_author_names_and_email_ids_from_config(config, current_pair_initials)
-        authors = pair_names(author_names)
         author_email = random_author_email(email_ids, config['email'])
         puts "Committing under #{author_email}"
         passthrough_args =  argv.map{|arg| "'#{arg}'"}.join(' ')
@@ -203,6 +205,12 @@ BANNER
 
       def no_email(config)
         !config.key? 'email'
+      end
+
+      def authors
+        config = read_pairs_config
+        author_names, email_ids = extract_author_names_and_email_ids_from_config(config, current_pair_initials)
+        puts pair_names(author_names)
       end
 
       private
