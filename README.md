@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/pivotal/git_scripts.png)](https://travis-ci.org/pivotal/git_scripts)
-
 # Git Scripts
 
 These scripts are helpers for managing developer workflow when using git repos hosted on GitHub.  Install as a rubygem and they can be run as standard git commands like `git about`.
@@ -10,7 +8,7 @@ These scripts are helpers for managing developer workflow when using git repos h
 
 ## System Wide Installation
 
-    $ cd /usr/local/bin && curl -L http://github.com/pivotal/git_scripts/tarball/master | gunzip | tar xvf - --strip=2
+    $ cd /usr/local/bin && curl -L http://github.com/j-clark/git_scripts/tarball/master | gunzip | tar xvf - --strip=2
 
 ## git-about
 
